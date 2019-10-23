@@ -29,15 +29,15 @@ RUN apt-get update && \
         libfreetype6-dev \
         libssl-dev \
         libmcrypt-dev \
-        zlib1g-dev
+        libzip-dev
 
 # Install the PHP mcrypt extention
 RUN pecl install mcrypt-1.0.2
 
-
 # Install the PHP pdo_mysql extention
 RUN docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql
+
 # Install the PHP pdo_pgsql extention
 RUN docker-php-ext-install pdo_pgsql
 
